@@ -1,11 +1,13 @@
-# SkoHub Pages
+# ARGA Vocabularies using SkoHub
+
+## SkoHub Pages
 
 This is an example repository (formerly named `skohub-docker-vocabs`) to show how you can publish your SKOS vocabulary using GitHub infrastructure (Actions and Pages).
 
 Every time a change is made to a vocabulary a GitHub-workflow-action is triggered to publish the most recent vocabulary to the `gh-pages`-branch, which is used by GitHub pages.
 It spins up a Docker container made from [SkoHub Vocabs](https://github.com/hbz/skohub-vocabs).
 
-## Usage
+### Usage
 
 If you want to reuse this repo and have your vocabulary automatically pushed und published via GitHub-Pages, follow these steps:
 
@@ -17,7 +19,7 @@ If you want to reuse this repo and have your vocabulary automatically pushed und
 
 Any issues? Please open up a issue [here](https://github.com/skohub-io/skohub-pages/issues)
 
-## Custom Domain
+### Custom Domain
 
 If you want to host your vocabularies under your GitHub pages domain (so no W3 perma-id or purl.org redirect), you have to provide that domain in the [`config.yaml`](./config.yaml).
 
@@ -30,9 +32,9 @@ The base of your concept scheme could then be something like: `https://skohub-io
 
 Notice that this will apply to all your hosted vocabularies.
 
-## Troubleshooting
+### Troubleshooting
 
-### There is no `gh-pages` branch to select for GitHub Pages
+#### There is no `gh-pages` branch to select for GitHub Pages
 
 You probably only forked the main branch.
 You have two options:
@@ -40,17 +42,17 @@ You have two options:
 - Delete the repo and fork it again, but make sure to uncheck the box to only fork the main branch
 - Make sure the GitHub Action is activated ➡️ Go to "Actions" tab and activate it. After that commit changes to a vocabulary in the main branch. This should trigger the build and create a `gh-pages` branch.
 
-### I push changes, but they seem to have no effect. My vocabulary stays the same
+#### I push changes, but they seem to have no effect. My vocabulary stays the same
 
 Maybe your GitHub Action is not activated yet.
 Go to the "Actions" tab and activate GitHub Actions for your repository.
 
-### During the build I get an error saying `The requested URL returned error: 403`
+#### During the build I get an error saying `The requested URL returned error: 403`
 
 You maybe need to update permissions like described here: https://github.com/peaceiris/actions-gh-pages/issues/744
 Go to `Settings` > `Actions` > `General` > `Workflow permissions` and toggle the Read and write permissions.
 
-## CHANGELOG
+### CHANGELOG
 
 09.02.2021:
 
